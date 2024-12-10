@@ -4,7 +4,8 @@ FROM node:alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY . .
+# Source => . (Current directory) Destination => WORKDIR inside the container
+COPY . . 
 RUN npm run build
 
 # Second FROM instruction starts a new build stage 

@@ -55,7 +55,10 @@ docker build -t my-react-app .
 Run the following command to start a container from the Docker image:
 
 ```sh
-docker run -p 80:80 my-react-app
+# Run the container and map port 4040 to port 80 on the host
+# Now, 4040 is the port on the your computer that will be used to access the React app in port 80 in the container
+# localhost:4040 gives you access to the app running in the container 
+docker run -p 4040:80 my-react-app
 ```
 
 Your React app should now be accessible at `http://localhost` since we've use port 80.
